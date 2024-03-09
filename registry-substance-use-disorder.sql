@@ -1,29 +1,29 @@
+/* =======================================================================================================================================
+Project:		Substance Use Registry (CEHDR)
+Author:			Matt Cvitanovich
+Create date: 	2024-01-17
+Update date:
+Description:	Creates a single patient-level file of (dates of) substance use disorders
+					for CEHDR research projects.
+Steps:
+	(1) Create temp table containing medication orders for naloxone from Emergency admisisons
+	(2) Use CTEs to pull together patients' most recent diagnosis date for each substance use disorder,
+		medication orders for buprenorphine, demographics, most recently completed appointment or 
+		hospital admission ... merging in naloxone orders from the temp table.
+
+==========================================================================================
+Modification History
+------------------------------------------------------------------------------------------
+Modify Date		Change Description
+==========================================================================================
+
+
+===========================================================================================================================================*/
+
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
 SET NOCOUNT ON;
 GO
-
--- =============================================
--- Project:		Substance Use Registry (CEHDR)
--- Author:		Matt Cvitanovich
--- Create date: 
--- Update date:
--- Description:	Creates a single patient-level file of (dates of) substance use disorders
---					for CEHDR research projects.
--- Steps:
---	(1) Create temp table containing medication orders for naloxone from Emergency admisisons
---	(2) Use CTEs to pull together patients' most recent diagnosis date for each substance use disorder,
---		medication orders for buprenorphine, demographics, most recently completed appointment or 
---		hospital admission ... merging in naloxone orders from the temp table.
--- =============================================
-
-
--- =============================================
--- Modification History
--- ---------------------------------------------
--- Modify Date		Change Description
--- =============================================
-
 
 -- Temp table for Naloxone in the ED
 IF OBJECT_ID(N'tempdb..#NALOXONE_ED', N'U') IS NOT NULL

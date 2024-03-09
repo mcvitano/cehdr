@@ -28,7 +28,6 @@ Steps:
 	(2) Construct temp table of orders for AB differentiation tests that indicate "positive" status in the LAB_COMMENTS table
 	(3) Use CTEs to merge requested data fields into the PATIENT table
 
-
 ==========================================================================================
 Modification History
 ------------------------------------------------------------------------------------------
@@ -36,9 +35,7 @@ Modify Date		Change Description
 ==========================================================================================
 
 
-
 ===========================================================================================================================================*/
-
 
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
